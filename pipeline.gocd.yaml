@@ -37,6 +37,9 @@ pipelines:
     materials:
       mygit:
         git: https://github.com/derva/gocd_test
+        shallow_clone: false
+        auto_update: true
+        branch: main
     stages:
       - build: #stage one
           jobs:
