@@ -28,3 +28,22 @@ pipelines:
                 - Packing tests
                 command: echo
                 run_if: passed
+  build:
+    group: defaultGroup
+    label_template: ${COUNT}
+    dispaly_order: -1
+    parameters:
+      param1: ''
+    materials:
+      mygit:
+        git: https://github.com/derva/gocd_test
+    stages:
+      - build: #stage one
+          jobs:
+            Novi:
+              tasks:
+                - exec:
+                    arguments:
+                    command: ./build.sh
+                    run_if: passed
+                
