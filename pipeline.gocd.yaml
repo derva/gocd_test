@@ -47,6 +47,6 @@ pipelines:
               tasks:
                 - exec:
                     arguments:
-                    command: ./build.sh
+                    command: build.sh
                     run_if: passed
                 
